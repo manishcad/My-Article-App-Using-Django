@@ -159,16 +159,17 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <p>{{article.paragraph3}}.</p>
 <p>{{article.paragraph4}}</p>
 
+{% if article.image2 %}
+	<img src="{{article.image2.url}}">
+{% endif %}
 </div>
 </section>
 <section class="light-section content-section">
 	
-<div class="section-content">
-	{% if article.image2 %}
-	<img src="{{article.image2.url}}">
-	{% endif %}
+<div style="padding-bottom:20px;" class="section-content">
+	
 {% if article.third_title %}
-<h2 style="font-size:26px; font-weight:800;" class="section-header no-number">{{article.third_title}}</h2>
+<h2 class="section-header no-number">{{article.third_title}}</h2>
 {% endif %}
 <p>{{article.paragraph5}}</p>
 <p>{{article.paragraph6}}</p>
