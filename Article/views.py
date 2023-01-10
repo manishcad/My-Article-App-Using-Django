@@ -3,6 +3,7 @@ from .models import Article, Tag, Author
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 
@@ -46,7 +47,7 @@ def about(request, pk):
     context = {"author": author}
     return render(request, "about.html", context)
 
-
+@csrf_exempt
 def signup(request):
     if request.method == "POST":
         username = request.POST.get("username")
