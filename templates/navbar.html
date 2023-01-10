@@ -1,0 +1,40 @@
+<header id="masthead" class="site-header">
+    <div class="site-header__inside">
+        <div class="site-branding">
+            <a href="{% url 'Home' %}" rel="home"><h4 style="letter-spacing: 2px;">Manish Chand</h4></noscript></a>
+        </div><!-- .site-branding -->
+
+        <nav id="site-navigation" class="main-navigation">
+            <h5 class="mobile-menu-heading">Menu</h5>
+            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
+
+            <div class="main-navigation__links">
+                <div class="menu-nav-container"><ul id="primary-menu" class="menu"><li id="menu-item-17057" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-17057"><a href="/articles" aria-current="page">Articles</a></li>
+
+<li id="menu-item-208641" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-208641"><a href="">About</a></li>
+{% if request.user.is_authenticated %}
+<li id="menu-item-346679" class="nav-login-link menu-item menu-item-type-custom menu-item-object-custom menu-item-346679"><a href="{% url 'Login' %}">Log In</a></li>
+{% endif %}
+</ul></div>											<div class="membership-links membership-links--logged-out">
+                        {% if not request.user.is_authenticated %}
+                        <a href="{% url 'Login' %}" class="membership-links__login-link">Log In</a>
+                        <a href="" class="membership-links__sign-up-link"><button class="button--secondary">Sign Up</button></a>
+                        <div class="membership-links__mobile-sign-up-container">
+                            
+                            <a href="" class="membership-links__mobile-sign-up-link"><button class="button--secondary">Sign Up</button></a>
+                        </div>
+                        {% else %}
+                        <p style="margin-top: 12px; text-align: center;">Hello {{request.user}}</p>
+                        <a href="{% url 'Logout' %}" class="membership-links__sign-up-link"><button class="button--secondary">Logout</button></a>
+                        <div class="membership-links__mobile-sign-up-container">
+                           
+                            <a href="{% url 'Logout' %}" class="membership-links__mobile-sign-up-link"><button class="button--secondary">Logout</button></a>
+                        </div>
+                        {% endif %}
+                        
+                        
+                    </div>
+                                </div>
+        </nav><!-- #site-navigation -->
+    </div><!-- .site-header__inside -->
+</header><!-- #masthead -->

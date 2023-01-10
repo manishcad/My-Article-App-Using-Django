@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main id="primary" class="site-main site-main--page-light">
+
+		
+    <article id="post-20405" class="post-20405 page type-page status-publish hentry">
+        
+    <div class="login-form-wrapper">
+      <div class="login-image"><img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" /></div>
+    <div class="mp_wrapper mp_login_form">
+      <h4>Welcome Back.</h4>
+          
+        
+        <form name="mepr_loginform" id="mepr_loginform" class="mepr-form" action="" method="post">
+            {% csrf_token %}
+                <div class="mp-form-row mepr_username">
+            <div class="mp-form-label">
+                                  <label for="user_login">Username or E-mail</label>
+                      </div>
+            <input placeholder="Enter Your Username" type="text" name="username" id="user_login" value="" />
+          </div>
+          <div class="mp-form-row mepr_password">
+            <div class="mp-form-label">
+              <label for="user_pass">Password</label>
+                        <div class="mp-hide-pw">
+                <input placeholder="Enter Your Password" type="password" name="password" id="user_pass" value="" />
+                
+              </div>
+            </div>
+          </div>
+                <div class="mepr-login-actions">
+            <label class="custom-checkbox-label">
+              <input name="rememberme" class="custom-checkbox-input" type="checkbox" id="rememberme" value="forever" />
+              <span class="custom-checkbox-checkmark">
+              <svg class="checkmark-svg" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.83343 5.85038L9.19543 0.487793L10.0208 1.31263L3.83343 7.50004L0.121094 3.78771L0.945927 2.96288L3.83343 5.85038Z" fill="#252121"/>
+              </svg>
+              </span> 
+              Keep me logged in</label>
+            <a href="https://markmanson.net/log-in?action=forgot_password">Forgot Password?</a>
+            
+          </div>
+          {% if messages %}
+          {% for msg in messages %}
+          <p style="color: rgb(180, 29, 77); font-weight: bold; font-size: 20px;">{{msg}}</p>
+          {% endfor %}
+          {% endif %}
+          <div class="submit">
+            <input type="submit" name="wp-submit" id="wp-submit" class="button--primary" value="Log In" />
+            <input type="hidden" name="redirect_to" value="https://markmanson.net/subscribe" />
+            <input type="hidden" name="mepr_process_login_form" value="true" />
+            <input type="hidden" name="mepr_is_login_page" value="true" />
+          </div>
+        </form>
+        <div class="not-a-member">
+          <strong>No account?</strong> <a href="{% url 'Signup' %}"><button class="button--tertiary">Create one</button></a>
+        </div> 
+        <!-- mp-login-form-end --> 
+      </div>
+    </div></article><!-- #post-20405 -->
+    
+        </main><!-- #main -->
+{% endblock %}

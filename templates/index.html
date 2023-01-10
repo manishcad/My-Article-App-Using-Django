@@ -1,0 +1,2103 @@
+{% extends 'base.html' %}
+{% block content %}
+<main id="primary" class="site-main hfeed archives article-archives">
+    <div class="archives__search">
+        <div class="archives__search-inside">
+            <h4>Looking for something specific?</h4>
+            <form role="search" method="get" class="search-form" action="https://markmanson.net/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>        </div>
+    </div>
+    <div class="hero-section">
+        <h1>Articles</h1>
+        <p>Welcome to hundreds of the best articles on self-improvement, productivity, relationships and living a better life. You can browse the articles <a href="#by-topic">by topic</a>, <a href="#by-date">by date</a>, or search by keyword below.
+        </p>
+    </div>
+    
+
+    <div class="page-content">
+        
+<h2 id="by-topic">Articles by Topic</h2>
+<div class="archives__topics">
+
+{% for tag in tags %}
+<div class="archives__topic">
+    <a href="/how-to-get-motivated"><h5>{{tag.name}}</h5></a>
+        <div class="article-list article-list--simple">
+            {% for i in tag.articles.all %}
+                <li><a href="{% url 'Show_article' i.uid  %}">{{i.title}}</a></li>
+            {% endfor %}
+            
+        </div>
+    <a href="/how-to-get-motivated"><button class="button--tertiary">Read More <span class="hide-on-mobile">About Motivation</span></button></a>
+    </div>
+{% endfor %}
+
+
+</div>
+    </div>
+
+    <div class="articles-by-year">
+        <div class="page-content">
+            <h2 id="by-date">Articles by Date</h2>
+            <div class="articles-by-year__nav">
+                <h5>Select year</h5>
+                <ul id="tabs-nav" class="tabs-nav">
+                                            <li class="tabs-nav__item"> <a href="#year2022">2022</a></li>
+                                            <li class="tabs-nav__item"> <a href="#year2021">2021</a></li>
+                                            <li class="tabs-nav__item"> <a href="#year2020">2020</a></li>
+                                            <li class="tabs-nav__item"> <a href="#year2019">2019</a></li>
+                                            <li class="tabs-nav__item"> <a href="#year2018">2018</a></li>
+                                            <li class="tabs-nav__item"> <a href="#year2017">2017</a></li>
+                                            <li class="tabs-nav__item"> <a href="#year2016">2016</a></li>
+                                            <li class="tabs-nav__item"> <a href="#year2015">2015</a></li>
+                                            <li class="tabs-nav__item"> <a href="#year2014">2014</a></li>
+                                            <li class="tabs-nav__item"> <a href="#year2013">2013</a></li>
+                                            <li class="tabs-nav__item"> <a href="#year2012">2012</a></li>
+                                            <li class="tabs-nav__item"> <a href="#year2011">2011</a></li>
+                                            <li class="tabs-nav__item"> <a href="#year2010">2010</a></li>
+                                    </ul>
+            </div>
+            <div class="articles-by-year__content">
+
+                <div id="year2022" class="tab-content">
+                    <h2>2022</h2>
+                        <ul class="article-list article-list--with-columns article-list--has-premium">
+                                                    <a href="https://markmanson.net/why-growth-requires-struggle" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 10                                    </div>
+                                    <div class="article-list__title">
+                                        Why Growth Requires Struggle                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/trigger-warning" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 7                                    </div>
+                                    <div class="article-list__title">
+                                        Trigger Warning: Reality Hurts                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/are-you-not-entertained" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 18                                    </div>
+                                    <div class="article-list__title">
+                                        Are You Entertained—Or Addicted?                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/3-principles-for-a-better-life" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 13                                    </div>
+                                    <div class="article-list__title">
+                                        3 Principles for a Better Life                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/everyone-is-the-same" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 9                                    </div>
+                                    <div class="article-list__title">
+                                        Everyone Is Mostly the Same&#8230; (And Why This Is Good News)                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/response-to-will-smith-slap" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 1                                    </div>
+                                    <div class="article-list__title">
+                                        My Response to Will Smith Slapping Chris Rock                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-life-cycle-of-outrage" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 7                                    </div>
+                                    <div class="article-list__title">
+                                        The Outrage Cycle                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-trust-runs-the-world" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 8                                    </div>
+                                    <div class="article-list__title">
+                                        How Trust Runs the World                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/skills-matter-more-than-goals" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 3                                    </div>
+                                    <div class="article-list__title">
+                                        Why Skills Matter More Than Goals                                    </div>
+                                </li>
+                            </a>
+                        </ul>
+                </div>
+                                            <div id="year2021" class="tab-content">
+                    <h2>2021</h2>
+                    <ul class="article-list article-list--with-columns article-list--has-premium">
+                                                    <a href="https://markmanson.net/the-point-is-to-stop" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 13                                    </div>
+                                    <div class="article-list__title">
+                                        The Point Is to Stop                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-limits-of-belief" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 8                                    </div>
+                                    <div class="article-list__title">
+                                        The Power (and Limitations) of Self-Belief                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/3-life-lessons-from-will-smith" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 5                                    </div>
+                                    <div class="article-list__title">
+                                        3 Life Lessons I Learned From Will Smith                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-you-should-read-more-books" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 4                                    </div>
+                                    <div class="article-list__title">
+                                        Why You Should Read More Books                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/wisdom" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 6                                    </div>
+                                    <div class="article-list__title">
+                                        How to Cultivate Wisdom                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/social-media" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 7                                    </div>
+                                    <div class="article-list__title">
+                                        The Real Dangers of Social Media                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-paradox-of-tolerance" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 31                                    </div>
+                                    <div class="article-list__title">
+                                        The Paradox of Tolerance                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/habits" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 21                                    </div>
+                                    <div class="article-list__title">
+                                        Creating Healthy Habits: A Practical Guide                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/when-to-say-yes-and-how-to-say-no" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 17                                    </div>
+                                    <div class="article-list__title">
+                                        When to Say &#8220;Yes&#8221; and How to Say &#8220;No&#8221;                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/everyone-on-the-internet-is-wrong" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 26                                    </div>
+                                    <div class="article-list__title">
+                                        Why Everyone on the Internet Is Wrong                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/behind-the-scenes-documentary" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 12                                    </div>
+                                    <div class="article-list__title">
+                                        Behind the Scenes: The Subtle Art of Not Giving a F*ck Documentary                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/delayed-gratification" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 15                                    </div>
+                                    <div class="article-list__title">
+                                        How to Delay Gratification                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/crazy-theories-that-might-be-true" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 8                                    </div>
+                                    <div class="article-list__title">
+                                        3 Crazy Theories That Might Actually Be True                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/4-ways-my-views-have-changed" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 15                                    </div>
+                                    <div class="article-list__title">
+                                        4 Ways I&#8217;ve Changed My Mind in the Past 10 Years                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-i-am-not-a-stoic" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 15                                    </div>
+                                    <div class="article-list__title">
+                                        Why I Am Not a Stoic                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/most-people-are-good" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 18                                    </div>
+                                    <div class="article-list__title">
+                                        Why We Forget That Most People Are Good                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/goal-setting" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 11                                    </div>
+                                    <div class="article-list__title">
+                                        The Complete Guide to Goal Setting (Backed by Science)                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/happiness-is-the-wrong-question" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 4                                    </div>
+                                    <div class="article-list__title">
+                                        Happiness Is the Wrong Question                                    </div>
+                                </li>
+                            </a>
+                                            </ul>
+                </div>
+                                            <div id="year2020" class="tab-content">
+                    <h2>2020</h2>
+                    <ul class="article-list article-list--with-columns article-list--has-premium">
+                                                    <a href="https://markmanson.net/life-lessons-from-2020" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 28                                    </div>
+                                    <div class="article-list__title">
+                                        The Best Life Lessons From the Pandemic                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-deal-with-uncertainty" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 18                                    </div>
+                                    <div class="article-list__title">
+                                        How to Deal With Uncertainty                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/dunning-kruger-effect" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 4                                    </div>
+                                    <div class="article-list__title">
+                                        The Dunning-Kruger Effect: The Paradox of Our Own Ignorance                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-once-in-a-lifetime-paradox" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 23                                    </div>
+                                    <div class="article-list__title">
+                                        The &#8220;Once in a Lifetime&#8221; Paradox                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/when-you-are-your-own-worst-enemy" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 23                                    </div>
+                                    <div class="article-list__title">
+                                        When You Are Your Own Worst Enemy                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/boring-ways-to-become-more-creative" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 23                                    </div>
+                                    <div class="article-list__title">
+                                        5 Boring Ways to Become More Creative                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-get-better" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 16                                    </div>
+                                    <div class="article-list__title">
+                                        How to Feel Better                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/limiting-beliefs" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 12                                    </div>
+                                    <div class="article-list__title">
+                                        How to Overcome Your Limiting Beliefs                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/things-arent-as-bad" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 9                                    </div>
+                                    <div class="article-list__title">
+                                        Why Things Are Never as Bad as They Seem                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/5-common-beliefs" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 9                                    </div>
+                                    <div class="article-list__title">
+                                        5 Common Beliefs That Can Subtly Screw You Over                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-wage-philosophical-warfare" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 9                                    </div>
+                                    <div class="article-list__title">
+                                        How to Wage Philosophical Warfare                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/unintended-consequences" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 19                                    </div>
+                                    <div class="article-list__title">
+                                        The Law of Unintended Consequences                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/shame" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 12                                    </div>
+                                    <div class="article-list__title">
+                                        The Best Way to Resolve Your Shame                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-overcome-loneliness" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 8                                    </div>
+                                    <div class="article-list__title">
+                                        How to Overcome Loneliness                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/you-are-not-alone" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 5                                    </div>
+                                    <div class="article-list__title">
+                                        You Are (Not) Alone                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/logical-fallacies" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 28                                    </div>
+                                    <div class="article-list__title">
+                                        8 Logical Fallacies That Mess Us All Up                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/cognitive-biases-that-hurt-relationships" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 21                                    </div>
+                                    <div class="article-list__title">
+                                        The Cognitive Biases That Hurt Our Relationships                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/who-wants-to-live-forever" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 14                                    </div>
+                                    <div class="article-list__title">
+                                        Who Wants to Live Forever?                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-we-all-need-philosophy" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 7                                    </div>
+                                    <div class="article-list__title">
+                                        Why We All Need Philosophy                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-we-stay-in-bad-relationships" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 24                                    </div>
+                                    <div class="article-list__title">
+                                        Why We Stay in Bad Relationships                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-read-more-books" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 10                                    </div>
+                                    <div class="article-list__title">
+                                        3 Tips to Read More Books                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-best-and-the-worst-of-someone" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 3                                    </div>
+                                    <div class="article-list__title">
+                                        The Best and the Worst of Someone                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/understanding-your-emotions" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 15                                    </div>
+                                    <div class="article-list__title">
+                                        How to Understand Your Emotions                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/decision-making" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 29                                    </div>
+                                    <div class="article-list__title">
+                                        3 Reasons Why You Make Terrible Decisions (And How to Stop)                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-make-the-most-of-it" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 15                                    </div>
+                                    <div class="article-list__title">
+                                        How to Make the Most of It                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-dangers-of-distrust" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 25                                    </div>
+                                    <div class="article-list__title">
+                                        The Dangers of Distrust                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/resilience" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 25                                    </div>
+                                    <div class="article-list__title">
+                                        5 Ways to Build Resilience and Conquer Adversity                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/6-books-to-grow-from-your-pain" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 16                                    </div>
+                                    <div class="article-list__title">
+                                        6 Books That Will Help You Grow From Your Pain                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/forgiveness" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 24                                    </div>
+                                    <div class="article-list__title">
+                                        How to Forgive (But Not Forget)                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-great-meaning-trend" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 3                                    </div>
+                                    <div class="article-list__title">
+                                        The Great &#8220;Meaning&#8221; Trend                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/regret" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 3                                    </div>
+                                    <div class="article-list__title">
+                                        How to Deal With Regret                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-you-should-quit-the-news" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 20                                    </div>
+                                    <div class="article-list__title">
+                                        Why You Should Quit the News                                    </div>
+                                </li>
+                            </a>
+                                            </ul>
+                </div>
+                                            <div id="year2019" class="tab-content">
+                    <h2>2019</h2>
+                    <ul class="article-list article-list--with-columns article-list--has-premium">
+                                                    <a href="https://markmanson.net/10-important-lessons-from-the-2010s" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 30                                    </div>
+                                    <div class="article-list__title">
+                                        10 Important Lessons We Learned From the 2010s                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-3-paradoxes-of-life" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 8                                    </div>
+                                    <div class="article-list__title">
+                                        The 3 Paradoxes of Life (And How They Determine Who We Are)                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-overcome-your-demons" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 24                                    </div>
+                                    <div class="article-list__title">
+                                        How to Overcome Your Demons                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/self-esteem" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 11                                    </div>
+                                    <div class="article-list__title">
+                                        How to Build Self-Esteem (And Does It Even Matter?)                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/three-months-later-does-the-attention-diet-work" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 28                                    </div>
+                                    <div class="article-list__title">
+                                        Three Months Later: Does the Attention Diet Work?                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-be-patient" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 28                                    </div>
+                                    <div class="article-list__title">
+                                        How to Be Patient in an Impatient World                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/five-ideas-can-change-your-life" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 11                                    </div>
+                                    <div class="article-list__title">
+                                        5 Simple Ideas That Can Change Your Life                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-get-motivated" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 23                                    </div>
+                                    <div class="article-list__title">
+                                        How to Get Motivated and Take Action                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/principles-of-productivity" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 9                                    </div>
+                                    <div class="article-list__title">
+                                        4 Principles of Productivity                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/5-relationship-books" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 14                                    </div>
+                                    <div class="article-list__title">
+                                        5 Relationship Books Everyone Should Read                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/vulnerability-in-relationships" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 13                                    </div>
+                                    <div class="article-list__title">
+                                        Vulnerability: The Key to Better Relationships                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-best-parts-of-travel" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 11                                    </div>
+                                    <div class="article-list__title">
+                                        The Best Parts of Travel Are the Things You Don&#8217;t Remember                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/no-you-cant-make-a-person-change" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 11                                    </div>
+                                    <div class="article-list__title">
+                                        No, You Can&#8217;t Make a Person Change                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/5-mindsets-that-create-success" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 1                                    </div>
+                                    <div class="article-list__title">
+                                        5 Mindsets That Create Success                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-improve-focus" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 27                                    </div>
+                                    <div class="article-list__title">
+                                        How to Improve Your Focus and Concentration                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/managing-your-mental-health" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 10                                    </div>
+                                    <div class="article-list__title">
+                                        How to Manage Your Mental Health                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/lifelong-learning" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 23                                    </div>
+                                    <div class="article-list__title">
+                                        Lifelong Learning: How to Continuously Learn and Grow                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-paradox-of-progress" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 29                                    </div>
+                                    <div class="article-list__title">
+                                        The Paradox of Progress                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-uncomfortable-truth" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 29                                    </div>
+                                    <div class="article-list__title">
+                                        The Uncomfortable Truth                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/emotional-intelligence" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 11                                    </div>
+                                    <div class="article-list__title">
+                                        5 Skills to Help You Develop Emotional Intelligence                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/personal-values" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 14                                    </div>
+                                    <div class="article-list__title">
+                                        Personal Values: How to Know Who You Really Are                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/self-discipline" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 8                                    </div>
+                                    <div class="article-list__title">
+                                        If Self-Discipline Feels Difficult, Then You&#8217;re Doing It Wrong                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/3-core-components-of-a-healthy-relationship" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 14                                    </div>
+                                    <div class="article-list__title">
+                                        3 Core Components of a Healthy Relationship                                    </div>
+                                </li>
+                            </a>
+                                            </ul>
+                </div>
+                                            <div id="year2018" class="tab-content">
+                    <h2>2018</h2>
+                    <ul class="article-list article-list--with-columns article-list--has-premium">
+                                                    <a href="https://markmanson.net/5-books-that-explain-why-it-seems-the-world-is-so-fucked" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 31                                    </div>
+                                    <div class="article-list__title">
+                                        5 Books That Explain Why It Seems the World Is So Fucked                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-make-better-life-decisions" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 19                                    </div>
+                                    <div class="article-list__title">
+                                        How to Make Better Decisions                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-we-hold-on-to-bad-beliefs" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 16                                    </div>
+                                    <div class="article-list__title">
+                                        Why We Hold On to Bad Beliefs                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/deal-with-conflict" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 16                                    </div>
+                                    <div class="article-list__title">
+                                        How to Deal With Conflict (A Choose-Your-Own-Adventure Guide)                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/being-an-asshole" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 13                                    </div>
+                                    <div class="article-list__title">
+                                        Why Being an Asshole Can Be a Valuable Life Skill                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/will-smith" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 16                                    </div>
+                                    <div class="article-list__title">
+                                        How I Ended Up Working With Will Smith                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-one-rule-for-life" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 16                                    </div>
+                                    <div class="article-list__title">
+                                        The One Rule for Life                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/stop-trying-to-change-yourself" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 19                                    </div>
+                                    <div class="article-list__title">
+                                        Stop Trying to Change Yourself                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-backwards-law" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 7                                    </div>
+                                    <div class="article-list__title">
+                                        The Backwards Law—Why the Best Things in Life Must Be Let Go                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/perfectionism" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 3                                    </div>
+                                    <div class="article-list__title">
+                                        How to Get Over Perfectionism                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/self-awareness" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 3                                    </div>
+                                    <div class="article-list__title">
+                                        The Three Levels of Self-Awareness                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-change-your-life" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 9                                    </div>
+                                    <div class="article-list__title">
+                                        How to Change Your Life                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/on-rock-music-and-writing" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 5                                    </div>
+                                    <div class="article-list__title">
+                                        On Rock Music and Writing: The Fight to Stay Creative in the Face of Success                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-find-the-perfect-career" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 14                                    </div>
+                                    <div class="article-list__title">
+                                        How to Find the Perfect Career                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-grow-up" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 1                                    </div>
+                                    <div class="article-list__title">
+                                        How to Grow Up: A Guide to Being Human                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/reasons-to-get-married" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 14                                    </div>
+                                    <div class="article-list__title">
+                                        4 Terrible Reasons to Get Married (And 4 Really Good Ones)                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-let-go" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 25                                    </div>
+                                    <div class="article-list__title">
+                                        How to Let Go: Learning to Deal With Loss                                    </div>
+                                </li>
+                            </a>
+                                            </ul>
+                </div>
+                                            <div id="year2017" class="tab-content">
+                    <h2>2017</h2>
+                    <ul class="article-list article-list--with-columns article-list--has-premium">
+                                                    <a href="https://markmanson.net/5-books-for-dealing-with-anxiety-and-depression" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 27                                    </div>
+                                    <div class="article-list__title">
+                                        5 Best Books for Dealing With Anxiety and Depression                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/read-fiction" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 30                                    </div>
+                                    <div class="article-list__title">
+                                        Why You Should Read Fiction                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-you-shouldnt-trust-emotions" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 30                                    </div>
+                                    <div class="article-list__title">
+                                        Why You Shouldn&#8217;t Trust Your Emotions                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/10-cool-things-about-the-brain" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 16                                    </div>
+                                    <div class="article-list__title">
+                                        10 Cool Things About the Brain and What It Means for You                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/fear-of-missing-out" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 16                                    </div>
+                                    <div class="article-list__title">
+                                        The Complete Guide to Getting Over FOMO (Fear of Missing Out)                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-grow-from-your-pain" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 26                                    </div>
+                                    <div class="article-list__title">
+                                        How to Grow From Your Pain                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/3-simple-ideas" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 5                                    </div>
+                                    <div class="article-list__title">
+                                        3 Simple Ideas That Will Make You Smarter Than Most People                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-real-value-of-money" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 5                                    </div>
+                                    <div class="article-list__title">
+                                        The Real Value of Money                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/when-to-break-up-with-someone" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 21                                    </div>
+                                    <div class="article-list__title">
+                                        When to Break Up With Someone and When to Stick It Out                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/most-important-skill-in-life" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 14                                    </div>
+                                    <div class="article-list__title">
+                                        The Most Important Skill in Life                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-happiness-is-overrated" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 14                                    </div>
+                                    <div class="article-list__title">
+                                        Why Happiness Is Overrated                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-get-over-someone" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 1                                    </div>
+                                    <div class="article-list__title">
+                                        How to Get Over Someone and Move On with Your Life                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-become-a-better-learner" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 18                                    </div>
+                                    <div class="article-list__title">
+                                        How to Become a Better Learner                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/history-of-romance" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 17                                    </div>
+                                    <div class="article-list__title">
+                                        A Brief History of Romance (And Why It Matters)                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/self-improvement" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 20                                    </div>
+                                    <div class="article-list__title">
+                                        What Is Self-Improvement?                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/creative-advantages-of-ignorance" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 1                                    </div>
+                                    <div class="article-list__title">
+                                        The Creative Advantages of Ignorance                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-be-more-productive" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 12                                    </div>
+                                    <div class="article-list__title">
+                                        How to Optimize Productivity (While Working Less)                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/paradox-of-success" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 28                                    </div>
+                                    <div class="article-list__title">
+                                        The Paradox of Success                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/benefits-of-being-slightly-crazy" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 27                                    </div>
+                                    <div class="article-list__title">
+                                        The Surprising Benefits of Being (Slightly) Crazy                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/smartphones" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 13                                    </div>
+                                    <div class="article-list__title">
+                                        Smartphones Are the New Cigarettes                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-subtle-art-further-reading" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 31                                    </div>
+                                    <div class="article-list__title">
+                                        Further Reading and References for The Subtle Art                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/life-cheat-codes" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 30                                    </div>
+                                    <div class="article-list__title">
+                                        Life Is a Video Game—Here Are the Cheat Codes                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/aging" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 9                                    </div>
+                                    <div class="article-list__title">
+                                        Reflections on Aging                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-meaning-of-life" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 9                                    </div>
+                                    <div class="article-list__title">
+                                        How to Find Meaning in Your Life                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/what-real-friends-look-like" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 10                                    </div>
+                                    <div class="article-list__title">
+                                        What Real Friends Look Like                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/do-we-ever-feel-we-have-enough" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 9                                    </div>
+                                    <div class="article-list__title">
+                                        Do We Ever Feel Like We Have Enough?                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-be-happy" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 30                                    </div>
+                                    <div class="article-list__title">
+                                        A Practical Guide to Happiness                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/responsibility-fault-fallacy" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 26                                    </div>
+                                    <div class="article-list__title">
+                                        The Responsibility/Fault Fallacy                                    </div>
+                                </li>
+                            </a>
+                                            </ul>
+                </div>
+                                            <div id="year2016" class="tab-content">
+                    <h2>2016</h2>
+                    <ul class="article-list article-list--with-columns article-list--has-premium">
+                                                    <a href="https://markmanson.net/important-year-life" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 31                                    </div>
+                                    <div class="article-list__title">
+                                        The Most Important Year of My Life                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/6-books" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 15                                    </div>
+                                    <div class="article-list__title">
+                                        6 Books That Make You Less of a Horrible Person                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/benefits-of-marriage" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 9                                    </div>
+                                    <div class="article-list__title">
+                                        3 Unexpected Benefits of Marriage                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/relationship-advice" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 8                                    </div>
+                                    <div class="article-list__title">
+                                        1,500 People Give All the Relationship Advice You&#8217;ll Ever Need                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-freedom-isnt-free" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 1                                    </div>
+                                    <div class="article-list__title">
+                                        Why Freedom Isn&#8217;t Free                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/life-skills" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 20                                    </div>
+                                    <div class="article-list__title">
+                                        3 Important Life Skills Nobody Ever Taught You                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/feedback-loop-from-hell" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 24                                    </div>
+                                    <div class="article-list__title">
+                                        The Feedback Loop From Hell                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/hate-yourself" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 30                                    </div>
+                                    <div class="article-list__title">
+                                        9 Steps to Hating Yourself a Little Less                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/future-of-self" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 9                                    </div>
+                                    <div class="article-list__title">
+                                        The Future of Self                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/doubt" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 19                                    </div>
+                                    <div class="article-list__title">
+                                        Why It Can Be Good to Doubt Yourself                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/trust" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 5                                    </div>
+                                    <div class="article-list__title">
+                                        Why You Can&#8217;t Trust Yourself                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/insecurity" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 31                                    </div>
+                                    <div class="article-list__title">
+                                        How Your Insecurity Is Bought and Sold                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/unconditional-love" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 17                                    </div>
+                                    <div class="article-list__title">
+                                        Maybe You Don&#8217;t Know What Love Is                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/brazil_pt" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 11                                    </div>
+                                    <div class="article-list__title">
+                                        Uma Carta Aberta ao Brasil                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/brazil" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 11                                    </div>
+                                    <div class="article-list__title">
+                                        An Open Letter to Brazil                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/5-massive-books" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 28                                    </div>
+                                    <div class="article-list__title">
+                                        5 Massive Books That Are Worth Your Time                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/goals" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 7                                    </div>
+                                    <div class="article-list__title">
+                                        Why Goals Are Overrated (And What to Do Instead)                                    </div>
+                                </li>
+                            </a>
+                                            </ul>
+                </div>
+                                            <div id="year2015" class="tab-content">
+                    <h2>2015</h2>
+                    <ul class="article-list article-list--with-columns article-list--has-premium">
+                                                    <a href="https://markmanson.net/be-patient" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 17                                    </div>
+                                    <div class="article-list__title">
+                                        Shut Up and Be Patient                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/potty-mouth" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 23                                    </div>
+                                    <div class="article-list__title">
+                                        Why I Have a Potty Mouth                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/screw-finding-your-passion" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 22                                    </div>
+                                    <div class="article-list__title">
+                                        Screw Finding Your Passion                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/romance" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 17                                    </div>
+                                    <div class="article-list__title">
+                                        Romance Is Like Alcohol                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/long-distance-relationships" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 6                                    </div>
+                                    <div class="article-list__title">
+                                        How to Survive a Long Distance Relationship                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/taught-in-school" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 20                                    </div>
+                                    <div class="article-list__title">
+                                        5 Things That Should Be Taught in Every School                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-stop-procrastinating" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 12                                    </div>
+                                    <div class="article-list__title">
+                                        How to Stop Procrastinating                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/being-average" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 18                                    </div>
+                                    <div class="article-list__title">
+                                        In Defense of Being Average                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/guide-to-modern-dating" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 4                                    </div>
+                                    <div class="article-list__title">
+                                        A Practical Guide to Modern Dating                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/four-stages-of-life" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 21                                    </div>
+                                    <div class="article-list__title">
+                                        The Four Stages of Life                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-people-cheat" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 23                                    </div>
+                                    <div class="article-list__title">
+                                        Why People Cheat in Relationships                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/7-books" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 2                                    </div>
+                                    <div class="article-list__title">
+                                        7 Books That Will Change How You See the World                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-be-confident" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 12                                    </div>
+                                    <div class="article-list__title">
+                                        The Only Way to Be Confident                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-secret" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 26                                    </div>
+                                    <div class="article-list__title">
+                                        The Staggering Bullshit of &#8220;The Secret&#8221;                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/not-giving-a-fuck" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 8                                    </div>
+                                    <div class="article-list__title">
+                                        The Subtle Art of Not Giving a Fuck                                    </div>
+                                </li>
+                            </a>
+                                            </ul>
+                </div>
+                                            <div id="year2014" class="tab-content">
+                    <h2>2014</h2>
+                    <ul class="article-list article-list--with-columns article-list--has-premium">
+                                                    <a href="https://markmanson.net/attention-economy" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 4                                    </div>
+                                    <div class="article-list__title">
+                                        In the Future, Our Attention Will Be Sold                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/worst-moments-of-your-life" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 6                                    </div>
+                                    <div class="article-list__title">
+                                        63 Steps to Survive the Worst Moments of Your Life                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/risk" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 16                                    </div>
+                                    <div class="article-list__title">
+                                        How to Take Risks                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/you-cant-have-it-all" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 2                                    </div>
+                                    <div class="article-list__title">
+                                        No, You Can&#8217;t Have It All                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/life-purpose" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 18                                    </div>
+                                    <div class="article-list__title">
+                                        7 Strange Questions That Help You Find Your Life Purpose                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/5-life-lessons-5-years-traveling-world" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 3                                    </div>
+                                    <div class="article-list__title">
+                                        5 Life Lessons From 5 Years of Traveling the World                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/parents" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 28                                    </div>
+                                    <div class="article-list__title">
+                                        No, It&#8217;s Not All Your Parents&#8217; Fault                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/breakthrough-fallacy" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 6                                    </div>
+                                    <div class="article-list__title">
+                                        The Breakthrough Fallacy—What Change Actually Looks Like                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/love" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 4                                    </div>
+                                    <div class="article-list__title">
+                                        Love Is Not Enough                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/healthy-relationship-habits" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 9                                    </div>
+                                    <div class="article-list__title">
+                                        6 Healthy Relationship Habits Most People Think Are Toxic                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/10-life-lessons-excel-30s" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 20                                    </div>
+                                    <div class="article-list__title">
+                                        10 Life Lessons to Excel in Your 30s                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/surviving-my-20s" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 6                                    </div>
+                                    <div class="article-list__title">
+                                        10 Life Lessons I Learned from Surviving My 20s                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/hidden-costs-of-happiness" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 20                                    </div>
+                                    <div class="article-list__title">
+                                        The Hidden Costs of Happiness                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/still-single" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 13                                    </div>
+                                    <div class="article-list__title">
+                                        3 Simple Explanations for Why You&#8217;re Still Single                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/male-female-relations" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 23                                    </div>
+                                    <div class="article-list__title">
+                                        A Brief History of Male/Female Relations                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-we-judge-others" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 9                                    </div>
+                                    <div class="article-list__title">
+                                        How We Judge Others Is How We Judge Ourselves                                    </div>
+                                </li>
+                            </a>
+                                            </ul>
+                </div>
+                                            <div id="year2013" class="tab-content">
+                    <h2>2013</h2>
+                    <ul class="article-list article-list--with-columns article-list--has-premium">
+                                                    <a href="https://markmanson.net/school" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 11                                    </div>
+                                    <div class="article-list__title">
+                                        3 Things School Taught You Without You Even Realizing It                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/wrong-about-everything" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 21                                    </div>
+                                    <div class="article-list__title">
+                                        Why I&#8217;m Wrong About Everything (And So Are You)                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/question" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 6                                    </div>
+                                    <div class="article-list__title">
+                                        The Most Important Question of Your Life                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/9-subtle-lies-we-all-tell-ourselves" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 30                                    </div>
+                                    <div class="article-list__title">
+                                        9 Subtle Lies We All Tell Ourselves                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/stop-trying-to-be-happy" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 10                                    </div>
+                                    <div class="article-list__title">
+                                        Stop Trying to Be Happy                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/sex-education" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 2                                    </div>
+                                    <div class="article-list__title">
+                                        7 Things Sex Education Should Have Taught Us But Didn&#8217;t                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/find-what-you-love" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 19                                    </div>
+                                    <div class="article-list__title">
+                                        Find What You Love and Let It Kill You                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/measure-your-life" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 5                                    </div>
+                                    <div class="article-list__title">
+                                        How Do You Measure Your Life?                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/being-special" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 22                                    </div>
+                                    <div class="article-list__title">
+                                        Being Special Isn&#8217;t So Special                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/internet" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 15                                    </div>
+                                    <div class="article-list__title">
+                                        Why Everyone on the Internet Is an Asshole                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/toxic-relationship-signs" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 8                                    </div>
+                                    <div class="article-list__title">
+                                        6 Signs You&#8217;re in a Toxic Relationship                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/everything-you-need" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 29                                    </div>
+                                    <div class="article-list__title">
+                                        You Already Have Everything You Need                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/dreams" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 22                                    </div>
+                                    <div class="article-list__title">
+                                        Why Some Dreams Should Not Be Pursued                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/digital-nomad" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 10                                    </div>
+                                    <div class="article-list__title">
+                                        The Dark Side of the Digital Nomad                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/fuck-yes" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 8                                    </div>
+                                    <div class="article-list__title">
+                                        Fuck Yes or No                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/change-your-mind" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 28                                    </div>
+                                    <div class="article-list__title">
+                                        Change Your Mind About Dating                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/read-faster" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 22                                    </div>
+                                    <div class="article-list__title">
+                                        How to Read Faster and Remember More                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/disney" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 16                                    </div>
+                                    <div class="article-list__title">
+                                        How Disney Ruined Sex for Everyone                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/sex-and-our-psychological-needs" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 11                                    </div>
+                                    <div class="article-list__title">
+                                        Sex and Our Psychological Needs                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-your-relationships-fail" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 2                                    </div>
+                                    <div class="article-list__title">
+                                        Why Your Relationships Fail                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/playing-guitar" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 14                                    </div>
+                                    <div class="article-list__title">
+                                        5 Life Lessons I Learned From Playing Guitar                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-break-up-with-someone" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 14                                    </div>
+                                    <div class="article-list__title">
+                                        How to Break Up With Someone                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/paradoxes-that-are-true" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 6                                    </div>
+                                    <div class="article-list__title">
+                                        20 Paradoxes That Are True                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-bad-acid-trip" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 21                                    </div>
+                                    <div class="article-list__title">
+                                        The Bad Acid Trip                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/youre-okay" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 17                                    </div>
+                                    <div class="article-list__title">
+                                        You&#8217;re Okay                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/boundaries" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 14                                    </div>
+                                    <div class="article-list__title">
+                                        The Guide to Strong Relationship Boundaries                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/check-please" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 11                                    </div>
+                                    <div class="article-list__title">
+                                        &#8220;Check, Please&#8221; &#8211; A Short Story About Perspective                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/flirting" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 4                                    </div>
+                                    <div class="article-list__title">
+                                        The Right and Wrong Ways to Flirt                                    </div>
+                                </li>
+                            </a>
+                                            </ul>
+                </div>
+                                            <div id="year2012" class="tab-content">
+                    <h2>2012</h2>
+                    <ul class="article-list article-list--with-columns article-list--has-premium">
+                                                    <a href="https://markmanson.net/shut-up-and-be-grateful" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 17                                    </div>
+                                    <div class="article-list__title">
+                                        Shut Up and Be Grateful                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/self-help" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 12                                    </div>
+                                    <div class="article-list__title">
+                                        5 Problems With the Self-Help Industry                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/your-two-minds" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 7                                    </div>
+                                    <div class="article-list__title">
+                                        You Have Two Minds—Here&#8217;s How to Use Them                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/80-20-your-life" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 30                                    </div>
+                                    <div class="article-list__title">
+                                        The 80/20 Principle and How It Can Change Your Life                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-guide-to-being-miserable" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 10                                    </div>
+                                    <div class="article-list__title">
+                                        The Guide to Being Miserable                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/sexual-harassment" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 19                                    </div>
+                                    <div class="article-list__title">
+                                        The Borders of Sexual Harassment                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/open-letter" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 8                                    </div>
+                                    <div class="article-list__title">
+                                        An Open Letter to My 18-Year-Old Self                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/wanderlust" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 20                                    </div>
+                                    <div class="article-list__title">
+                                        Wanderlust                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-prime-belief" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 3                                    </div>
+                                    <div class="article-list__title">
+                                        The Most Important Belief You Can Have                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-self-awareness-is-sexy" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 29                                    </div>
+                                    <div class="article-list__title">
+                                        Why Self-Awareness Is Sexy                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-you-fail" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 21                                    </div>
+                                    <div class="article-list__title">
+                                        10 Reasons Why You Fail                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-make-your-own-luck" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 13                                    </div>
+                                    <div class="article-list__title">
+                                        How to Make Your Own Luck                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-quit-your-job-and-travel-the-world" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 14                                    </div>
+                                    <div class="article-list__title">
+                                        How to Quit Your Day Job and Travel the World                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/10-things-most-americans-dont-know" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        July 10                                    </div>
+                                    <div class="article-list__title">
+                                        10 Things Most Americans Don&#8217;t Know About America                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/minimalism" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 15                                    </div>
+                                    <div class="article-list__title">
+                                        Minimalism                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-dating-is-so-hard" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 12                                    </div>
+                                    <div class="article-list__title">
+                                        It&#8217;s Complicated: Why Relationships and Dating Can Be So Hard                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/ken-wilber" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        June 4                                    </div>
+                                    <div class="article-list__title">
+                                        The Rise and Fall of Ken Wilber                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/learn-a-foreign-language" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 24                                    </div>
+                                    <div class="article-list__title">
+                                        25 Tips to Learn a Foreign Language                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/why-you-should-care-about-many-things" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 14                                    </div>
+                                    <div class="article-list__title">
+                                        Why You Should Care About Many Things                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/analysis-paralysis" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 1                                    </div>
+                                    <div class="article-list__title">
+                                        Analysis Paralysis                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/therapy" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 24                                    </div>
+                                    <div class="article-list__title">
+                                        Do You Need Therapy?                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-ipanema-boardwalk" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 16                                    </div>
+                                    <div class="article-list__title">
+                                        The Ipanema Boardwalk                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/benefits-of-meditation" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 13                                    </div>
+                                    <div class="article-list__title">
+                                        Meditation: Why You Should Do It                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/when-the-fall-comes" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        April 9                                    </div>
+                                    <div class="article-list__title">
+                                        When The Fall Comes                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/are-you-an-emotional-vampire" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 28                                    </div>
+                                    <div class="article-list__title">
+                                        Are You an Emotional Vampire?                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/pornography-can-ruin-your-sex-life" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        March 27                                    </div>
+                                    <div class="article-list__title">
+                                        How Pornography Can Ruin Your Sex Life                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/joy-and-meaning" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        February 21                                    </div>
+                                    <div class="article-list__title">
+                                        The Simple Joys Are the Most Meaningful                                    </div>
+                                </li>
+                            </a>
+                                            </ul>
+                </div>
+                                            <div id="year2011" class="tab-content">
+                    <h2>2011</h2>
+                    <ul class="article-list article-list--with-columns article-list--has-premium">
+                                                    <a href="https://markmanson.net/attachment-styles" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 13                                    </div>
+                                    <div class="article-list__title">
+                                        Attachment Styles and How They Affect Your Relationships                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/a-dust-over-india" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 6                                    </div>
+                                    <div class="article-list__title">
+                                        A Dust Over India                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/interviewing-like-a-boss" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 2                                    </div>
+                                    <div class="article-list__title">
+                                        Interviewing Like a Boss                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-i-quit-smoking" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        November 28                                    </div>
+                                    <div class="article-list__title">
+                                        How I Quit Smoking For Good                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/std-guide" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        October 31                                    </div>
+                                    <div class="article-list__title">
+                                        Your Honest-to-God Guide to STDs                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-levels-of-eye-contact" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 5                                    </div>
+                                    <div class="article-list__title">
+                                        The Levels of Eye Contact                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/how-to-give-advice" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 20                                    </div>
+                                    <div class="article-list__title">
+                                        How to Give Advice to Others                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/woman-lovers-and-haters" class="article-list__link is-premium">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        May 17                                    </div>
+                                    <div class="article-list__title">
+                                        Woman Lovers and Woman Haters                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/three-loves-theory" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        January 21                                    </div>
+                                    <div class="article-list__title">
+                                        The Three Loves Theory                                    </div>
+                                </li>
+                            </a>
+                                            </ul>
+                </div>
+                                            <div id="year2010" class="tab-content">
+                    <h2>2010</h2>
+                    <ul class="article-list article-list--with-columns article-list--has-premium">
+                                                    <a href="https://markmanson.net/the-wisdom-of-surfing" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 22                                    </div>
+                                    <div class="article-list__title">
+                                        The Wisdom of Surfing                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/compatibility-and-chemistry" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        December 18                                    </div>
+                                    <div class="article-list__title">
+                                        Compatibility and Chemistry in Relationships                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/the-zen-dilemma" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        September 19                                    </div>
+                                    <div class="article-list__title">
+                                        The Zen Dilemma                                    </div>
+                                </li>
+                            </a>
+                                                    <a href="https://markmanson.net/this-is-water" class="article-list__link ">
+                                <li class="article-list__item">
+                                    <div class="article-list__date article-list__meta">
+                                        August 9                                    </div>
+                                    <div class="article-list__title">
+                                        This Is Water                                    </div>
+                                </li>
+                            </a>
+                                            </ul>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <div class="promo-container">
+        
+<div class="page-content">
+    <div class="breakthrough__promo breakthrough__promo--1">
+        <div class="breakthrough__image-container">
+            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="breakthrough__image" data-lazy-src="https://markmanson.net/wp-content/themes/mm-main/images/phones-grey-background-2.png" /><noscript><img src="https://markmanson.net/wp-content/themes/mm-main/images/phones-grey-background-2.png" class="breakthrough__image" /></noscript>
+        </div>        
+        <div class="breakthrough__form">
+            <h3>5 Minutes Each Week That Could Change Your Life</h3>
+            <p>Enter your email address below to sign up for my free newsletter, <a href="/breakthrough">The Breakthrough</a>. Each week, you’ll receive a few prompts and exercises designed to create your next breakthrough. No fluff, no filler, no BS. Just five minutes each week that could change your life.</p>
+            <form action="/wp-content/plugins/active-campaign-api/opt-in-post-redirect.php" method="post" class="opt-in-form">
+                <input name="email" type="email" placeholder="Email Address" required class="email-input">
+                <input type="submit" value="Sign Up" class="submit-button">
+                <input name="tag" type="hidden" value="460">
+            </form>
+            <p class="p-small privacy-policy"><em>Your information is protected and I never spam, ever. You can view my privacy policy <a href="/privacy-policy">here</a>.</em></p>
+        </div>
+    </div>
+</div>
+    </div>
+</main>
+
+{% endblock %}
+	

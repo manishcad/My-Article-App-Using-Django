@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main id="primary" class="site-main site-main--page-light">
+
+		
+    <article id="post-20405" class="post-20405 page type-page status-publish hentry">
+        
+    <div class="login-form-wrapper">
+      <div class="login-image"><img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" /></div>
+    <div class="mp_wrapper mp_login_form">
+      <h4>Create Your New Account.</h4>
+          
+        
+        <form name="mepr_loginform" id="mepr_loginform" class="mepr-form" action="" method="post">
+            {% csrf_token %}
+
+          <div class="mp-form-row mepr_username">
+            <div class="mp-form-label">
+                <label for="user_login">Username: </label>
+            </div>
+            <input placeholder="Enter Your Username" type="text" name="username" id="user_login" value="" />
+          </div>
+          
+          <div class="mp-form-row mepr_username">
+            <div class="mp-form-label">
+                <label for="user_login">Email: </label>
+            </div>
+            <input placeholder="Enter Your Email Address" type="email" name="email" id="user_login" value="" />
+          </div>
+
+          <div class="mp-form-row mepr_password">
+            <div class="mp-form-label">
+              <label for="user_pass">Password</label>
+                        <div class="mp-hide-pw">
+                <input placeholder="Enter Your Password" type="password" name="password1" id="user_pass" value="" />
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="mp-form-row mepr_password">
+            <div class="mp-form-label">
+              <label for="user_pass">Confirm-Password</label>
+                        <div class="mp-hide-pw">
+                <input placeholder="Enter Your Password" type="password" name="password2" id="user_pass" value="" />
+                
+              </div>
+            </div>
+          </div>
+
+              
+          {% if messages %}
+          {% for msg in messages %}
+          <p style="color: rgb(180, 29, 77); font-weight: bold; font-size: 20px;">{{msg}}</p>
+          {% endfor %}
+          {% endif %}
+          <div class="submit">
+            <input type="submit" name="wp-submit" id="wp-submit" class="button--primary" value="Sign Up" />
+            <input type="hidden" name="redirect_to" value="https://markmanson.net/subscribe" />
+            <input type="hidden" name="mepr_process_login_form" value="true" />
+            <input type="hidden" name="mepr_is_login_page" value="true" />
+          </div>
+        </form>
+        <div class="not-a-member">
+          <strong>Already have an account?</strong> <a href="{% url 'Login' %}"><button class="button--tertiary">Login</button></a>
+        </div> 
+        <!-- mp-login-form-end --> 
+      </div>
+    </div></article><!-- #post-20405 -->
+    
+        </main><!-- #main -->
+{% endblock %}
