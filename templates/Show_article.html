@@ -152,6 +152,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <p>{{article.paragraph2}}</p>
 
 <section class="light-section content-section">
+	<img src="{{article.image.url}}">
 <div class="section-content">
 <h2 class="section-header no-number">“{{article.second_title}}”</h2>
 
@@ -161,13 +162,17 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 </div>
 </section>
 <section class="light-section content-section">
+	
 <div class="section-content">
+	{% if article.image2 %}
+	<img src="{{article.image2.url}}"
+	{% endif %}
 {% if article.third_title %}
 <h2 class="section-header no-number">{{article.third_title}}</h2>
 {% endif %}
 <p>{{article.paragraph5}}</p>
 <p>{{article.paragraph6}}</p>
-<img src="{{article.image.url}}">
+
 </div>
 </section>
 
@@ -194,15 +199,19 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 			<p class="p-small aside__about-copy">{{article.author.about}}</p>
 			<a href="{% url 'About' article.author.uid %}" title="Learn more about Mark"><button class="button--tertiary">Learn More About {{article.author.name}}</button></a>
 			<div class="aside__social">
-				<a href="https://www.youtube.com/channel/UC0TnW9acNxqeojxXDMbohcA"><svg width="17" height="13" viewBox="0 0 17 13" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M16.0497 2.1436C16.4115 3.55435 16.4115 6.49935 16.4115 6.49935C16.4115 6.49935 16.4115 9.44435 16.0497 10.8551C15.8486 11.6349 15.2604 12.2484 14.5154 12.4558C13.1625 12.8327 8.49479 12.8327 8.49479 12.8327C8.49479 12.8327 3.8295 12.8327 2.47417 12.4558C1.72604 12.2453 1.13863 11.6325 0.939917 10.8551C0.578125 9.44435 0.578125 6.49935 0.578125 6.49935C0.578125 6.49935 0.578125 3.55435 0.939917 2.1436C1.141 1.36381 1.72921 0.750265 2.47417 0.542849C3.8295 0.166015 8.49479 0.166016 8.49479 0.166016C8.49479 0.166016 13.1625 0.166015 14.5154 0.542849C15.2635 0.753432 15.851 1.36618 16.0497 2.1436ZM6.91146 9.27018L11.6615 6.49935L6.91146 3.72852V9.27018Z" /></svg></a>
-				<a href="https://www.instagram.com/markmanson"><svg width="15" height="15" viewBox="0 0 15 15" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M7.50521 0.416016C9.42975 0.416016 9.66988 0.423099 10.425 0.458516C11.1793 0.493932 11.6929 0.612224 12.1448 0.787891C12.6123 0.967807 13.0061 1.21147 13.4 1.6046C13.7601 1.95869 14.0388 2.38702 14.2167 2.85977C14.3916 3.31097 14.5106 3.82522 14.546 4.5796C14.5793 5.33468 14.5885 5.57481 14.5885 7.49935C14.5885 9.42389 14.5815 9.66402 14.546 10.4191C14.5106 11.1735 14.3916 11.687 14.2167 12.1389C14.0394 12.6119 13.7606 13.0404 13.4 13.3941C13.0458 13.7542 12.6175 14.0328 12.1448 14.2108C11.6936 14.3858 11.1793 14.5048 10.425 14.5402C9.66988 14.5735 9.42975 14.5827 7.50521 14.5827C5.58067 14.5827 5.34054 14.5756 4.58546 14.5402C3.83108 14.5048 3.31754 14.3858 2.86563 14.2108C2.39269 14.0334 1.96429 13.7546 1.61046 13.3941C1.2502 13.0401 0.971493 12.6117 0.79375 12.1389C0.618083 11.6877 0.499792 11.1735 0.464375 10.4191C0.431083 9.66402 0.421875 9.42389 0.421875 7.49935C0.421875 5.57481 0.428958 5.33468 0.464375 4.5796C0.499792 3.82452 0.618083 3.31168 0.79375 2.85977C0.971001 2.38673 1.24978 1.95828 1.61046 1.6046C1.96439 1.24422 2.39276 0.965491 2.86563 0.787891C3.31754 0.612224 3.83038 0.493932 4.58546 0.458516C5.34054 0.425224 5.58067 0.416016 7.50521 0.416016ZM7.50521 3.95768C6.5659 3.95768 5.66506 4.33082 5.00087 4.99501C4.33668 5.6592 3.96354 6.56004 3.96354 7.49935C3.96354 8.43866 4.33668 9.3395 5.00087 10.0037C5.66506 10.6679 6.5659 11.041 7.50521 11.041C8.44452 11.041 9.34536 10.6679 10.0095 10.0037C10.6737 9.3395 11.0469 8.43866 11.0469 7.49935C11.0469 6.56004 10.6737 5.6592 10.0095 4.99501C9.34536 4.33082 8.44452 3.95768 7.50521 3.95768ZM12.1094 3.7806C12.1094 3.54577 12.0161 3.32056 11.85 3.15452C11.684 2.98847 11.4588 2.89518 11.224 2.89518C10.9891 2.89518 10.7639 2.98847 10.5979 3.15452C10.4318 3.32056 10.3385 3.54577 10.3385 3.7806C10.3385 4.01543 10.4318 4.24064 10.5979 4.40668C10.7639 4.57273 10.9891 4.66602 11.224 4.66602C11.4588 4.66602 11.684 4.57273 11.85 4.40668C12.0161 4.24064 12.1094 4.01543 12.1094 3.7806ZM7.50521 5.37435C8.06879 5.37435 8.6093 5.59823 9.00781 5.99675C9.40633 6.39526 9.63021 6.93576 9.63021 7.49935C9.63021 8.06293 9.40633 8.60344 9.00781 9.00195C8.6093 9.40047 8.06879 9.62435 7.50521 9.62435C6.94162 9.62435 6.40112 9.40047 6.00261 9.00195C5.60409 8.60344 5.38021 8.06293 5.38021 7.49935C5.38021 6.93576 5.60409 6.39526 6.00261 5.99675C6.40112 5.59823 6.94162 5.37435 7.50521 5.37435Z" /></svg></a>
-				<a href="https://twitter.com/IAmMarkManson"><svg width="15" height="13" viewBox="0 0 15 13" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M14.6958 2.00689C14.155 2.24609 13.5815 2.40319 12.9944 2.47298C13.6133 2.10282 14.0765 1.52028 14.2977 0.833892C13.7169 1.17956 13.0801 1.42181 12.4164 1.55285C11.9705 1.07584 11.3796 0.759491 10.7354 0.652973C10.0913 0.546454 9.42998 0.655739 8.85433 0.963838C8.27869 1.27194 7.82096 1.76158 7.55231 2.35666C7.28366 2.95174 7.21913 3.6189 7.36877 4.25443C6.19089 4.1954 5.03859 3.8893 3.98668 3.35603C2.93478 2.82275 2.00678 2.07422 1.26294 1.15902C0.999643 1.61125 0.861281 2.12534 0.862021 2.64864C0.862021 3.67572 1.38477 4.5831 2.17952 5.11435C1.70919 5.09954 1.24922 4.97253 0.837937 4.74389V4.78073C0.838079 5.46476 1.07478 6.1277 1.50791 6.65714C1.94104 7.18658 2.54395 7.54994 3.2144 7.6856C2.77779 7.80392 2.31999 7.82136 1.87565 7.7366C2.06468 8.32539 2.43311 8.84032 2.92936 9.2093C3.4256 9.57828 4.02482 9.78283 4.6431 9.79431C4.02861 10.2769 3.32502 10.6337 2.57256 10.8442C1.8201 11.0547 1.03353 11.1148 0.257812 11.0211C1.61193 11.892 3.18826 12.3543 4.79823 12.3528C10.2474 12.3528 13.2274 7.8386 13.2274 3.92364C13.2274 3.79614 13.2239 3.66723 13.2182 3.54114C13.7982 3.12193 14.2988 2.60261 14.6965 2.0076L14.6958 2.00689Z" /></svg></a>
-				<a href="https://www.facebook.com/Markmansonnet/"><svg width="15" height="15" viewBox="0 0 15 15" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M10.1933 14.625V9.11025H12.0402L12.3165 6.96642H10.1933V5.59842C10.1933 4.97775 10.3658 4.55421 11.2557 4.55421H12.3909V2.63679C11.8413 2.57848 11.289 2.5502 10.7363 2.55208C9.09996 2.55208 7.97975 3.55117 7.97975 5.38625V6.96642H6.12883V9.11025H7.97975V14.625H1.16667C0.956704 14.625 0.75534 14.5416 0.606874 14.3931C0.458407 14.2447 0.375 14.0433 0.375 13.8333V1.16667C0.375 0.956704 0.458407 0.75534 0.606874 0.606874C0.75534 0.458407 0.956704 0.375 1.16667 0.375H13.8333C14.0433 0.375 14.2447 0.458407 14.3931 0.606874C14.5416 0.75534 14.625 0.956704 14.625 1.16667V13.8333C14.625 14.0433 14.5416 14.2447 14.3931 14.3931C14.2447 14.5416 14.0433 14.625 13.8333 14.625H10.1933Z"/></svg></a>
-				<a href="https://www.linkedin.com/in/markmanson"><svg width="14" height="13" viewBox="0 0 14 13" fill="white" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_327_1072)"><path d="M3.25508 4.18164H0.444556C0.319821 4.18164 0.21875 4.27553 0.21875 4.39132V12.7754C0.21875 12.8912 0.319821 12.9851 0.444556 12.9851H3.25508C3.37981 12.9851 3.48089 12.8912 3.48089 12.7754V4.39132C3.48089 4.27553 3.37981 4.18164 3.25508 4.18164Z" /><path d="M1.85459 0.0136719C0.831961 0.0136719 0 0.785369 0 1.73391C0 2.68287 0.831961 3.45486 1.85459 3.45486C2.87641 3.45486 3.7077 2.68282 3.7077 1.73391C3.70774 0.785369 2.87641 0.0136719 1.85459 0.0136719Z" /><path d="M10.4094 3.97266C9.28062 3.97266 8.44618 4.42325 7.94006 4.93524V4.39071C7.94006 4.27493 7.83898 4.18103 7.71425 4.18103H5.02268C4.89795 4.18103 4.79688 4.27493 4.79688 4.39071V12.7748C4.79688 12.8906 4.89795 12.9845 5.02268 12.9845H7.82706C7.9518 12.9845 8.05287 12.8906 8.05287 12.7748V8.62662C8.05287 7.22878 8.46176 6.68421 9.51113 6.68421C10.654 6.68421 10.7448 7.55722 10.7448 8.69853V12.7748C10.7448 12.8907 10.8459 12.9845 10.9706 12.9845H13.776C13.9008 12.9845 14.0018 12.8907 14.0018 12.7748V8.17602C14.0018 6.09749 13.575 3.97266 10.4094 3.97266Z" /></g><defs><clipPath id="clip0_327_1072"><rect width="14" height="13" /></clipPath></defs></svg></a>
+				{% if article.author.instagram_link %}
+				<a href="https://www.instagram.com/manishcad"><svg width="15" height="15" viewBox="0 0 15 15" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M7.50521 0.416016C9.42975 0.416016 9.66988 0.423099 10.425 0.458516C11.1793 0.493932 11.6929 0.612224 12.1448 0.787891C12.6123 0.967807 13.0061 1.21147 13.4 1.6046C13.7601 1.95869 14.0388 2.38702 14.2167 2.85977C14.3916 3.31097 14.5106 3.82522 14.546 4.5796C14.5793 5.33468 14.5885 5.57481 14.5885 7.49935C14.5885 9.42389 14.5815 9.66402 14.546 10.4191C14.5106 11.1735 14.3916 11.687 14.2167 12.1389C14.0394 12.6119 13.7606 13.0404 13.4 13.3941C13.0458 13.7542 12.6175 14.0328 12.1448 14.2108C11.6936 14.3858 11.1793 14.5048 10.425 14.5402C9.66988 14.5735 9.42975 14.5827 7.50521 14.5827C5.58067 14.5827 5.34054 14.5756 4.58546 14.5402C3.83108 14.5048 3.31754 14.3858 2.86563 14.2108C2.39269 14.0334 1.96429 13.7546 1.61046 13.3941C1.2502 13.0401 0.971493 12.6117 0.79375 12.1389C0.618083 11.6877 0.499792 11.1735 0.464375 10.4191C0.431083 9.66402 0.421875 9.42389 0.421875 7.49935C0.421875 5.57481 0.428958 5.33468 0.464375 4.5796C0.499792 3.82452 0.618083 3.31168 0.79375 2.85977C0.971001 2.38673 1.24978 1.95828 1.61046 1.6046C1.96439 1.24422 2.39276 0.965491 2.86563 0.787891C3.31754 0.612224 3.83038 0.493932 4.58546 0.458516C5.34054 0.425224 5.58067 0.416016 7.50521 0.416016ZM7.50521 3.95768C6.5659 3.95768 5.66506 4.33082 5.00087 4.99501C4.33668 5.6592 3.96354 6.56004 3.96354 7.49935C3.96354 8.43866 4.33668 9.3395 5.00087 10.0037C5.66506 10.6679 6.5659 11.041 7.50521 11.041C8.44452 11.041 9.34536 10.6679 10.0095 10.0037C10.6737 9.3395 11.0469 8.43866 11.0469 7.49935C11.0469 6.56004 10.6737 5.6592 10.0095 4.99501C9.34536 4.33082 8.44452 3.95768 7.50521 3.95768ZM12.1094 3.7806C12.1094 3.54577 12.0161 3.32056 11.85 3.15452C11.684 2.98847 11.4588 2.89518 11.224 2.89518C10.9891 2.89518 10.7639 2.98847 10.5979 3.15452C10.4318 3.32056 10.3385 3.54577 10.3385 3.7806C10.3385 4.01543 10.4318 4.24064 10.5979 4.40668C10.7639 4.57273 10.9891 4.66602 11.224 4.66602C11.4588 4.66602 11.684 4.57273 11.85 4.40668C12.0161 4.24064 12.1094 4.01543 12.1094 3.7806ZM7.50521 5.37435C8.06879 5.37435 8.6093 5.59823 9.00781 5.99675C9.40633 6.39526 9.63021 6.93576 9.63021 7.49935C9.63021 8.06293 9.40633 8.60344 9.00781 9.00195C8.6093 9.40047 8.06879 9.62435 7.50521 9.62435C6.94162 9.62435 6.40112 9.40047 6.00261 9.00195C5.60409 8.60344 5.38021 8.06293 5.38021 7.49935C5.38021 6.93576 5.60409 6.39526 6.00261 5.99675C6.40112 5.59823 6.94162 5.37435 7.50521 5.37435Z" /></svg></a>
+				{% endif %}
+				{% if article.author.twitter_link %}
+				<a href="https://twitter.com/"><svg width="15" height="13" viewBox="0 0 15 13" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M14.6958 2.00689C14.155 2.24609 13.5815 2.40319 12.9944 2.47298C13.6133 2.10282 14.0765 1.52028 14.2977 0.833892C13.7169 1.17956 13.0801 1.42181 12.4164 1.55285C11.9705 1.07584 11.3796 0.759491 10.7354 0.652973C10.0913 0.546454 9.42998 0.655739 8.85433 0.963838C8.27869 1.27194 7.82096 1.76158 7.55231 2.35666C7.28366 2.95174 7.21913 3.6189 7.36877 4.25443C6.19089 4.1954 5.03859 3.8893 3.98668 3.35603C2.93478 2.82275 2.00678 2.07422 1.26294 1.15902C0.999643 1.61125 0.861281 2.12534 0.862021 2.64864C0.862021 3.67572 1.38477 4.5831 2.17952 5.11435C1.70919 5.09954 1.24922 4.97253 0.837937 4.74389V4.78073C0.838079 5.46476 1.07478 6.1277 1.50791 6.65714C1.94104 7.18658 2.54395 7.54994 3.2144 7.6856C2.77779 7.80392 2.31999 7.82136 1.87565 7.7366C2.06468 8.32539 2.43311 8.84032 2.92936 9.2093C3.4256 9.57828 4.02482 9.78283 4.6431 9.79431C4.02861 10.2769 3.32502 10.6337 2.57256 10.8442C1.8201 11.0547 1.03353 11.1148 0.257812 11.0211C1.61193 11.892 3.18826 12.3543 4.79823 12.3528C10.2474 12.3528 13.2274 7.8386 13.2274 3.92364C13.2274 3.79614 13.2239 3.66723 13.2182 3.54114C13.7982 3.12193 14.2988 2.60261 14.6965 2.0076L14.6958 2.00689Z" /></svg></a>
+				{% endif %}
+				{% if article.author.facebook_link %}
+				<a href="https://www.facebook.com/manish.chand.9480"><svg width="15" height="15" viewBox="0 0 15 15" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M10.1933 14.625V9.11025H12.0402L12.3165 6.96642H10.1933V5.59842C10.1933 4.97775 10.3658 4.55421 11.2557 4.55421H12.3909V2.63679C11.8413 2.57848 11.289 2.5502 10.7363 2.55208C9.09996 2.55208 7.97975 3.55117 7.97975 5.38625V6.96642H6.12883V9.11025H7.97975V14.625H1.16667C0.956704 14.625 0.75534 14.5416 0.606874 14.3931C0.458407 14.2447 0.375 14.0433 0.375 13.8333V1.16667C0.375 0.956704 0.458407 0.75534 0.606874 0.606874C0.75534 0.458407 0.956704 0.375 1.16667 0.375H13.8333C14.0433 0.375 14.2447 0.458407 14.3931 0.606874C14.5416 0.75534 14.625 0.956704 14.625 1.16667V13.8333C14.625 14.0433 14.5416 14.2447 14.3931 14.3931C14.2447 14.5416 14.0433 14.625 13.8333 14.625H10.1933Z"/></svg></a>
+				{% endif %}
 			</div>
 		</div>
 
-		<div class="related-posts"><h5>MORE ARTICLES</h5><ul class="article-list article-list--simple article-list--small">{% for article in related_articles %}<li><a href="{% url 'Show_article' article.uid %}">{{article.title}}</a></li>{% endfor %}</ul><a href="/articles"><button class="button--tertiary">VIEW ALL ARTICLES</button></a></div>	</aside>
+		<div class="related-posts"><h5>MORE ARTICLES</h5><ul class="article-list article-list--simple article-list--small">{% for article in related_articles %}<li><a href="{% url 'Show_article' article.uid %}">{{article.title}}</a></li>{% endfor %}</ul></div>	</aside>
 </article><!-- #post-19531 -->
 
 	</main><!-- #main -->
@@ -213,107 +222,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 </div><!-- #page -->
 
-			<script>
-				jQuery(document).ready(function($) {
-					var visitedSubscribed = readCookie('visited_subscribed');
-					var activeCampaignUser = readCookie('acuid');
-					var utmMediumEmail = readCookie('utm_medium_email');
-
-					if (
-                        // !visitedSubscribed && !activeCampaignUser && !utmMediumEmail && 
-                        !visitedSubscribed && !activeCampaignUser && 
-                        $('.article-content h2').length > 0) {
-						                        var $h2 = $('.article-content h2').eq(1);
-						if ($h2.length > 0) {
-							$h2.before('<div class="in-article-opt-in breakthrough__promo">'
-                            + '<div class="breakthrough__form in-article-opt-in__inner">'
-                            + '<h3>122 people had breakthroughs last week. This week, will one of them be you?</h3>'
-                            + '<form action="/wp-content/plugins/active-campaign-api/opt-in-post-redirect.php" method="post" class="opt-in-form in-article-opt-in__form">'
-                            + '<input name="email" type="email" placeholder="Email Address" required class="email-input in-article-opt-in__email-input">'
-                            + '<input type="submit" value="Sign Up" class="submit-button in-article-opt-in__submit">'
-                            + '<input name="tag" type="hidden" value="460">'
-							+ '<input type="hidden" name="form_type" value="Within-article">'
-                            + '</form>'
-                            + '<p class="p-small privacy-policy curved-underline"><span>No spam or unexpected emails. Ever.</span></p>'
-                            + '</div>'
-                            + '<div class="breakthrough__image-container">'
-                            + '<img src="/wp-content/themes/mm-main/images/phone-slanted-breakthrough.png" />'
-                            + '</div>'
-                            + '</div>');
-                            }
-					}
-
-					$('.in-article-opt-in__form').on('submit', function(e) {
-				        e.preventDefault();
-
-				        $('.in-article-opt-in__submit', this).prop('disabled', true);
-				        var $containingDiv = $(this).parents('.in-article-opt-in');
-				        $('.in-article-opt-in__submit', $containingDiv).val('Submitting...');
-
-				        jQuery.post('/wp-content/plugins/active-campaign-api/opt-in-post.php', $(this).serialize(), function (data) {
-				            if (data.status === 'error') {
-								if ($('.form-error', $containingDiv).length) {
-									$('.form-error').text(data.message)
-								} else {
-									$('.in-article-opt-in__form').before('<div class="form-error" style="font-weight: 500; font-family: Montserrat; font-size: 16px; color: #ea1414;">' + data.message + '</div>');
-								}
-				            } else {
-				            	var successMessage = data.data.confirmed ? "You subscribed! Check your inbox." : "Success! Now check your email inbox to confirm your email address.";
-				                $('.in-article-opt-in__inner h3', $containingDiv).text(successMessage);
-								$('.in-article-opt-in__form', $containingDiv).hide();
-								$('.privacy-policy', $containingDiv).hide();
-								$('.form-error', $containingDiv).hide();
-
-								// set cookies
-				                createCookie('acuid', data.data.contact_id, 365);
-
-				                // also send GA event
-				    		  	ga('set', 'dimension1', 'Subscribed to Email List');
-						  		ga('set', 'metric2', 1);
-								ga('send', {
-								  hitType: 'event',
-								  eventCategory: 'Form submission',
-								  eventAction: 'Newsletter opt-in within article',
-								  eventLabel: window.location.pathname 
-								});
-				            }
-				        }).fail(function() {
-				            $('.form-error', $containingDiv).text("Something went wrong.");
-				        }).always(function() {
-						    $('.in-article-opt-in__submit', $containingDiv).prop('disabled', false);
-						    $('.in-article-opt-in__submit', $containingDiv).val('Get Free Ebook');
-						 });
-				    });
-
-				});
-
-				function createCookie(name, value, days) {
-				    var expires;
-
-				    if (days) {
-				        var date = new Date();
-				        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-				        expires = "; expires=" + date.toGMTString();
-				    } else {
-				        expires = "";
-				    }
-				    document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
-				}
-
-				function readCookie(name) {
-				    var nameEQ = encodeURIComponent(name) + "=";
-				    var ca = document.cookie.split(';');
-				    for (var i = 0; i < ca.length; i++) {
-				        var c = ca[i];
-				        while (c.charAt(0) === ' ')
-				            c = c.substring(1, c.length);
-				        if (c.indexOf(nameEQ) === 0)
-				            return decodeURIComponent(c.substring(nameEQ.length, c.length));
-				    }
-				    return null;
-				}
-
-			</script>
+			
 		<style>
 /* Exit intent modal */
 body.modal-active {

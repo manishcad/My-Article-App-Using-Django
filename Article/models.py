@@ -50,6 +50,7 @@ class Article(Base_model):
     paragraph6 = models.TextField(blank=True, null=True, default="")
     image = models.ImageField(upload_to="Article_images")
     tags = models.ManyToManyField(Tag)
+    image2=models.ImageField(upload_to="Article_images",blank=True,null=True)
 
     def __str__(self):
         return str(self.title)

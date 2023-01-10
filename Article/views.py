@@ -3,13 +3,18 @@ from .models import Article, Tag, Author
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 
 def home(request):
+    author = Author.objects.all().first()
+
     tags = Tag.objects.all()
-    context = {'tags': tags}
+
+    article_2023 = Article.objects.filter(
+        created__range=['2023-01-01', "2023-12-31"])
+
+    context = {'tags': tags, 'author': author, "article_2023": article_2023}
     return render(request, 'index.html', context)
 
 
@@ -23,6 +28,8 @@ def show_article(request, pk):
 
 
 def login_page(request):
+    if request.user.is_authenticated:
+        return redirect("Home")
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
@@ -47,8 +54,10 @@ def about(request, pk):
     context = {"author": author}
     return render(request, "about.html", context)
 
-@csrf_exempt
+
 def signup(request):
+    if request.user.is_authenticated:
+        return redirect("Home")
     if request.method == "POST":
         username = request.POST.get("username")
         email = request.POST.get("email")
