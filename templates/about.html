@@ -13,8 +13,8 @@
         <div class="entry-content">
            
     <p><img decoding="async" src="{{author.image.url}}" alt="" width="768" height="512" class="aligncenter size-medium_large wp-image-395539" data-lazy-srcset="{{author.image.url}}" data-lazy-sizes="(max-width: 768px) 100vw, 768px" data-lazy-src="{{author.image.url}}" /><noscript><img decoding="async" src="https://markmanson.net/wp-content/uploads/2022/12/119885588_655502108710779_5780766490180316735_o-768x512.jpg" alt="" width="768" height="512" class="aligncenter size-medium_large wp-image-395539" srcset="https://markmanson.net/wp-content/uploads/2022/12/119885588_655502108710779_5780766490180316735_o-768x512.jpg 768w, https://markmanson.net/wp-content/uploads/2022/12/119885588_655502108710779_5780766490180316735_o-300x200.jpg 300w, https://markmanson.net/wp-content/uploads/2022/12/119885588_655502108710779_5780766490180316735_o-780x520.jpg 780w, https://markmanson.net/wp-content/uploads/2022/12/119885588_655502108710779_5780766490180316735_o-640x427.jpg 640w, https://markmanson.net/wp-content/uploads/2022/12/119885588_655502108710779_5780766490180316735_o.jpg 990w" sizes="(max-width: 768px) 100vw, 768px" /></noscript></p>
-    <p>{{author.paragraph1}}</p>
-	<p>{{author.paragraph2}}</p>
+    <p>{{author.paragraph1 | safe }}</p>
+    <p>{{author.paragraph2 | safe }}</p>
     
         </div><!-- .entry-content -->
     
