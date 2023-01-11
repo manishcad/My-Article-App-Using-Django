@@ -26,7 +26,7 @@
 
 {% for tag in tags %}
 <div class="archives__topic">
-    <a href="/how-to-get-motivated"><h5>{{tag.name}}</h5></a>
+    <a href=""><h5>{{tag.name}}</h5></a>
         <div class="article-list article-list--simple">
             {% for i in tag.articles.all %}
                 <li><a href="{% url 'Show_article' i.uid  %}">{{i.title}}</a></li>
