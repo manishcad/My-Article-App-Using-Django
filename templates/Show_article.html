@@ -8,7 +8,7 @@
 	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 
 	<!-- This site is optimized with the Yoast SEO Premium plugin v19.6 (Yoast SEO v19.13) - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>Screw Finding Your Passion</title><link rel="stylesheet" href="https://markmanson.net/wp-content/cache/min/1/4e91d0e4902351cf179b7f7ea1dff3c9.css" media="all" data-minify="1" />
+	<title>{{article.title}}</title><link rel="stylesheet" href="https://markmanson.net/wp-content/cache/min/1/4e91d0e4902351cf179b7f7ea1dff3c9.css" media="all" data-minify="1" />
 	<meta name="description" content="Your passion is right in front of your face. If you have to look for it, then you’re probably not passionate about it at all. So screw &quot;finding&quot; your passion." />
 	<link rel="canonical" href="https://markmanson.net/screw-finding-your-passion" />
 	<meta property="og:locale" content="en_US" />
@@ -141,12 +141,12 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 		<div class="article-content">
 			<header class="entry-header">
 				<h1 class="entry-title">{{article.title}}</h1>				<div class="entry-meta">
-					<span class="entry-meta__written-by">Written By</span> <a href="">{{article.author.name}}</a> – <span class="entry-meta__written-by">filed under</span>{% for i in article.tags.all %} <a href="https://markmanson.net/life-purpose">{{i.name}}</a> |	{% endfor %}			</div><!-- .entry-meta -->
+					<span class="entry-meta__written-by">Written By</span> <a href="{% url 'About' article.author.uid %}">{{article.author.name}}</a> – <span class="entry-meta__written-by">filed under</span>{% for i in article.tags.all %} <a href="">{{i.name}}</a> |	{% endfor %}			</div><!-- .entry-meta -->
 				
 	  	
 					</header>
 
-			<section class="stag-section stag-intro-text"><p><span class="stag-dropcap stag-dropcap--squared" style="font-size:125px;line-height:125px;width:125px;height:125px;"></span>{{article.paragraph1}}</p>
+			<section class="stag-section stag-intro-text"><p><span class="stag-dropcap stag-dropcap--squared" style="font-size:125px;line-height:125px;width:125px;height:125px;"></span>{{article.paragraph1 | safe}}</p>
 </section>
 
 <p>{{article.paragraph2}}</p>
@@ -156,22 +156,21 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <div class="section-content">
 <h2 class="section-header no-number">“{{article.second_title}}”</h2>
 
-<p>{{article.paragraph3}}.</p>
+<p>{{article.paragraph3 | safe }}.</p>
 <p>{{article.paragraph4}}</p>
-
 {% if article.image2 %}
 	<img src="{{article.image2.url}}">
-{% endif %}
+	{% endif %}
 </div>
 </section>
-<section class="light-section content-section">
+<section class="light-section content-section" style="padding-bottom: 50px;">
 	
-<div style="padding-bottom:20px;" class="section-content">
+<div class="section-content">
 	
-{% if article.third_title %}
-<h2 class="section-header no-number">{{article.third_title}}</h2>
-{% endif %}
-<p>{{article.paragraph5}}</p>
+
+<h2   class="section-header no-number">“{{article.third_title}}”</h2>
+
+<p>{{article.paragraph5 | safe }}</p>
 <p>{{article.paragraph6}}</p>
 
 </div>

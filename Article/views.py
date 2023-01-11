@@ -20,7 +20,7 @@ def home(request):
 
 def show_article(request, pk):
     article = Article.objects.filter(uid=pk).first()
-    print(article.created)
+
     tag = article.tags.all().first()
     related_articles = Article.objects.filter(tags=tag)
     context = {"article": article, "related_articles": related_articles}

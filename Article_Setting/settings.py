@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS=['https://article-hub.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ["https://article-hub.up.railway.app"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "Article.apps.ArticleConfig",
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
