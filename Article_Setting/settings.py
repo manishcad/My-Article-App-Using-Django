@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!=&i=kj3kj0y_o9_yg%)7kosc0*k*0ddhx8a=x+d&%9=so43p='
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,8 +80,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'oxfHWoQK0dbV1TbApFPE',
-        'HOST': 'containers-us-west-107.railway.app',
+        'PASSWORD': os.environ.get("Database_Password"),
+        'HOST': os.environ.get("Database_Host"),
         'PORT': '6396',
     }
 }
@@ -141,7 +141,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Cloudnary Settings
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': "dgbe30e7f",
-    'API_KEY': "761954252784968",
-    'API_SECRET': "Tk86498ouwBdMrzVE5L9b6jrwD0"
+    'API_KEY': os.environ.get("Cloudinary_Api_Key"),
+    'API_SECRET': os.environ.get("Cloudinary_Api_Secret")
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
